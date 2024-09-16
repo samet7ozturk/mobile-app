@@ -15,12 +15,12 @@ export default () => {
       console.log("useResults hook response: ", response.data);
       setResults(response.data);
     } catch (error) {
-      console.error("API request error:", error);
+      console.error("API request error(useResults):", error);
     }
   };
 
   useEffect(() => {
-    searchApi("Tuz", "Bağcılar");
+    searchApi("Tuz");
   }, []);
 
   return [searchApi, results];
