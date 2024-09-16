@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { Alert, StyleSheet, TextInput, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 export default function SearchBar() {
@@ -14,8 +14,10 @@ export default function SearchBar() {
       <TextInput
         style={styles.searchBarPlaceHolder}
         placeholder="Market veya ürün ara"
-        autoComplete={false}
         autoCapitalize="none"
+        onSubmitEditing={() => {
+          Alert.alert("Arama tetiklendi");
+        }}
       />
     </View>
   );
